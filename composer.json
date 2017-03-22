@@ -1,0 +1,43 @@
+{
+    "name": "iboldurev/api-ai-php",
+    "description": "Unofficial api.ai PHP SDK.",
+    "keywords": ["api.ai", "api.ai sdk", "bot", "natural language"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Boldurev",
+            "email": "iboldurev@gmail.com",
+            "homepage": "https://github.com/iboldurev"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "6.2.3"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "v1.6.0",
+        "mockery/mockery": "0.9.9",
+        "phpunit/phpunit": "6.0.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "ApiAi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApiAi\\Tests\\": "tests/"
+        }
+    },
+	"scripts": {
+		"test": "vendor/bin/phpunit --stop-on-failure --no-coverage",
+		"cs": "php-cs-fixer fix --allow-risky=yes"
+	},
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,9 @@
+.DS_Store
+
+.idea
+clover.xml
+.php_cs.cache
+composer.lock
+
+/vendor
+/tests/Coverage
