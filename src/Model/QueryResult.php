@@ -105,4 +105,17 @@ class QueryResult extends Base
         return parent::get('score');
     }
 
+    /**
+     * @return Context
+     */
+    public function getContext($name) {
+        foreach ($this->getContexts() as $context) {
+            if ($context->getName() == $name) {
+                return $name;
+            }
+        }
+
+        return null;
+    }
+
 }
