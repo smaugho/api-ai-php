@@ -56,7 +56,20 @@ class Fulfillment extends Base
     }
 
     public function setData($data) {
-        parent::add("speech", $data);
+        parent::add("data", $data);
+    }
+
+    /**
+     * @return array
+     */
+    public function getMessages()
+    {
+        return parent::get('messages', []);
+    }
+
+    public function setMessages($messages)
+    {
+        return parent::set('messages', $messages);
     }
 
     /**
