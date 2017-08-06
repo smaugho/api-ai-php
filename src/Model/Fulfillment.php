@@ -69,7 +69,7 @@ class Fulfillment extends Base
 
     public function setMessages($messages)
     {
-        return parent::set('messages', $messages);
+        parent::add('messages', $messages);
     }
 
     /**
