@@ -18,12 +18,6 @@ class EntityApiAiClient extends ApiAiClient
 
     /**
      * ApiAiClient constructor.
-     *
-     * @param string $accessToken
-     * @param HttpClient|null $httpClient
-     * @param string $apiLanguage
-     * @param string $apiVersion
-     * @param string $apiEndPoint
      */
     public function __construct()
     {
