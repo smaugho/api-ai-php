@@ -12,15 +12,12 @@ use ApiAi\ApiAiClient\ApiAiClient;
 class IntentApiAiClient extends ApiAiClient
 {
     /**
-     * @var string
+     * @var string $clientKey
+     *
+     * IntentApiAiClient constructor.
      */
-     private $apiFullUriEndPoint;
-
-    /**
-     * ApiAiClient constructor.
-     */
-    public function __construct()
+    public function __construct($clientKey)
     {
-        parent::__construct('', '/intents');
+        parent::__construct($clientKey, 'intents');
     }
 }

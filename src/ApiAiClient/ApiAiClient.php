@@ -19,7 +19,7 @@ class ApiAiClient extends Client
     /**
      * @var string
      */
-     private $apiFullUriEndPoint;
+     public $apiFullUriEndPoint;
 
     /**
      * ApiAiClient constructor.
@@ -34,7 +34,7 @@ class ApiAiClient extends Client
                     $apiLanguage = self::DEFAULT_API_LANGUAGE, $apiVersion = self::DEFAULT_API_VERSION)
     {
         parent::__construct($accessToken);
-        $this->apiFullUriEndPoint = self::API_BASE_URI + self::DEFAULT_API_ENDPOINT + $apiEndPoint;
+        $this->apiFullUriEndPoint = self::API_BASE_URI . self::DEFAULT_API_ENDPOINT . $apiEndPoint;
     }
 
     /**

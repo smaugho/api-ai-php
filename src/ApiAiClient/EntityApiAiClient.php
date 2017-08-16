@@ -2,8 +2,6 @@
 
 namespace ApiAi\ApiAiClient;
 
-use ApiAi\ApiAiClient\ApiAiClient;
-
 /**
  * Class EntityApiAiClient
  *
@@ -12,16 +10,13 @@ use ApiAi\ApiAiClient\ApiAiClient;
 class EntityApiAiClient extends ApiAiClient
 {
     /**
-     * @var string
+     * @var string $clientKey
+     *
+     * EntityApiAiClient constructor.
      */
-     private $apiFullUriEndPoint;
-
-    /**
-     * ApiAiClient constructor.
-     */
-    public function __construct()
+    public function __construct($clientKey)
     {
-        parent::__construct('', '/entities');
+        parent::__construct($clientKey, 'entities');
     }
 
     /**

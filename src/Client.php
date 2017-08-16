@@ -42,7 +42,7 @@ class Client
     /**
      * Request default timeout
      */
-    const DEFAULT_TIMEOUT = 5;
+    const DEFAULT_TIMEOUT = 30;
 
     /**
      * @var array
