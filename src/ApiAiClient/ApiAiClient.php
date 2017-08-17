@@ -14,7 +14,7 @@ class ApiAiClient extends Client
     /**
      * @var array
      */
-    protected static $allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
+    public static $allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
 
     /**
      * @var string
