@@ -5,7 +5,7 @@ namespace ApiAi\ApiAiClient;
 /**
  * Class EntityApiAiClient
  *
- * @package EntityApiAiClient
+ * @package ApiAiClient
  */
 class EntityApiAiClient extends ApiAiClient
 {
@@ -20,16 +20,27 @@ class EntityApiAiClient extends ApiAiClient
     }
 
     /**
+     * @param int $id
      * @param array $params
      *
      * @return ResponseInterface
      */
-     public function createEntries(array $params = [])
+     public function createEntries($id, array $params = [])
      {
-         return $this->post($this->apiFullUriEndPoint . '/entries', $params);
+         return $this->post($this->apiFullUriEndPoint . "/$id/entries", $params);
      }
 
-     /**
+    /**
+     * @param array $params
+     *
+     * @return ResponseInterface
+     */
+    public function updateAll(array $params = [])
+    {
+        return $this->put($this->apiFullUriEndPoint, $params);
+    }
+
+    /**
      * @param int $id
      * @param array $params
      *

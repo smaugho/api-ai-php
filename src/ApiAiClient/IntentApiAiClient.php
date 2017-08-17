@@ -7,7 +7,7 @@ use ApiAi\ApiAiClient\ApiAiClient;
 /**
  * Class IntentApiAiClient
  *
- * @package IntentApiAiClient
+ * @package ApiAiClient
  */
 class IntentApiAiClient extends ApiAiClient
 {

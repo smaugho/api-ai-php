@@ -14,12 +14,12 @@ class ApiAiClient extends Client
     /**
      * @var array
      */
-    public static $allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
+    protected static $allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
 
     /**
      * @var string
      */
-     public $apiFullUriEndPoint;
+     protected $apiFullUriEndPoint;
 
     /**
      * ApiAiClient constructor.
@@ -69,17 +69,6 @@ class ApiAiClient extends Client
      *
      * @return ResponseInterface
      */
-     public function updateAll( array $params = [])
-     {
-         return $this->put($this->apiFullUriEndPoint, $params);
-     }
-
-     /**
-     * @param int $id
-     * @param array $params
-     *
-     * @return ResponseInterface
-     */
      public function updateOne($id = 0, array $params = [])
      {
          return $this->put($this->apiFullUriEndPoint . '/' . $id, $params);
@@ -92,7 +81,7 @@ class ApiAiClient extends Client
      */
      public function deleteOne($id = 0)
      {
-         return $this->delete($this->apiFullUriEndPoint);
+         return $this->delete($this->apiFullUriEndPoint . "/$id");
      }
 
     /**
@@ -112,7 +101,7 @@ class ApiAiClient extends Client
      *
      * @return ResponseInterface
      */
-    public function delete($uri, array $params = [])
+    protected function delete($uri, array $params = [])
     {
         return $this->send('DELETE', $uri, null, $params);
     }
