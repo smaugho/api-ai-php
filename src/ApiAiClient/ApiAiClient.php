@@ -11,10 +11,6 @@ use ApiAi\Client;
  */
 class ApiAiClient extends Client
 {
-    /**
-     * @var array
-     */
-    public static $allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
 
     /**
      * @var string
@@ -35,6 +31,7 @@ class ApiAiClient extends Client
     {
         parent::__construct($accessToken);
         $this->apiFullUriEndPoint = self::API_BASE_URI . self::DEFAULT_API_ENDPOINT . $apiEndPoint;
+        self::$allowedMethod = ['GET', 'POST', 'PUT', 'DELETE'];
     }
 
     /**
