@@ -16,15 +16,10 @@ class Intent extends Base
      */
     public function __construct(array $data)
     {
+
 		if (!empty($data['contextIn'])) {
             foreach ($data['contextIn'] as $key => $value) {
                 $data['contextIn'][$key] = $value;
-            }
-        }
-		
-		if (!empty($data['parameters'])) {
-            foreach ($data['contexts'] as $key => $context) {
-                $data['contexts'][$key] = new Parameter($context);
             }
         }
 		
@@ -33,7 +28,19 @@ class Intent extends Base
                 $data['contextOut'][$key] = new Context($context);
             }
         }
-		
+
+        if (!empty($data['userSays'])) {
+            foreach ($data['userSays'] as $key => $value) {
+                $data['userSays'][$key] = new UserSay($value);
+            }
+        }
+
+        if (!empty($data['parameters'])) {
+            foreach ($data['parameters'] as $key => $value) {
+                $data['parameters'][$key] = new Parameter($value);
+            }
+        }
+
 		if (!empty($data['actions'])) {
             foreach ($data['actions'] as $key => $value) {
                 $data['actions'][$key] = $value;
@@ -75,7 +82,7 @@ class Intent extends Base
     {
         return parent::get('parameters', []);
     }
-	
+
 	/**
      * @return array|Context[]
      */
@@ -83,7 +90,15 @@ class Intent extends Base
     {
         return parent::get('contextOut', []);
     }
-	
+
+    /**
+     * @return array|UserSay[]
+     */
+    public function getUserSays()
+    {
+        return parent::get('userSays', []);
+    }
+
 	/**
      * @return array
      */

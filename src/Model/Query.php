@@ -16,7 +16,7 @@ class Query extends Base
      */
     public function __construct($data = [])
     {
-        if ($data['timestamp'] instanceof \DateTime) {
+        if (!empty($data['timestamp']) && $data['timestamp'] instanceof \DateTime) {
             $data['timestamp'] = $data['timestamp']->format(DATE_ISO8601);
         }
 

@@ -3,6 +3,7 @@
 namespace ApiAi\ApiAiClient;
 
 use ApiAi\Client;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class ApiAiClient

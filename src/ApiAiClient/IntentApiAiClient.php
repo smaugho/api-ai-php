@@ -2,8 +2,6 @@
 
 namespace ApiAi\ApiAiClient;
 
-use ApiAi\ApiAiClient\ApiAiClient;
-
 /**
  * Class IntentApiAiClient
  *
@@ -20,4 +18,6 @@ class IntentApiAiClient extends ApiAiClient
     {
         parent::__construct($clientKey, 'intents');
     }
+
+
 }
